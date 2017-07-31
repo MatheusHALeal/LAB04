@@ -1,0 +1,130 @@
+content h1:first-child {
+  margin-top: 0; }
+
+  body {
+    background: #607D8B;
+  }
+
+  html {
+    background-color: #607D8B;
+  }
+
+  #coluna {
+    height: 100%;
+    background-color: black;
+  }
+
+  #breakline {
+    color: transparent;
+    width: 100%;
+
+  }
+
+  #menu {
+    height: 100%;
+    background-color: black;
+  }
+
+  #formulario {
+    background:transparent;border:none
+  }
+
+  #body {
+    background-color: #607D8B;
+  }
+
+  #coluna > section > md-sidenav > md-toolbar {
+    background-color: #37474F;
+    min-height: 5px;
+    height: 49px;
+  }
+
+  #coluna > section > md-sidenav {
+    background-color: #607D8B;
+  }
+
+  #coluna > section > md-sidenav > md-content {
+    background-color: #607D8B;
+
+  }
+
+  #box {
+    background-color: #455A64;
+  }
+
+  .md-card-image {
+    margin-top: 3px;
+    align-self: center;
+    height: 400px;
+    width: 270px;
+  }
+
+  #myBtn {
+    background-color: #208772;
+    font-size: 10px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+  }
+
+  #myBtn2 {
+    font-size: 10px;
+    text-align: center;
+    justify-content: center;
+    background-color: #FF3C3C;
+  }
+
+  .md-input-container {
+    margin-right: 10px;
+    background-color: white
+  }
+
+  #label {
+    color: cyan;
+
+  }
+
+  .dialogdemoBasicUsage #popupContainer {
+    position: relative; }
+
+    .dialogdemoBasicUsage .footer {
+      width: 100%;
+      text-align: center;
+      margin-left: 20px; }
+
+      .dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+        font-size: 0.8em;
+        margin-top: 50px; }
+
+        .dialogdemoBasicUsage button {
+          width: 200px; }
+
+          .dialogdemoBasicUsage div#status {
+            color: #c60008; }
+
+            .dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+              margin-bottom: 0; }
+
+              md-tabs > md-tabs-wrapper {
+                background-color: #37474F;
+              }
+
+              md-tabs > md-tabs-content-wrapper {
+                background-color: #607D8B;
+                width: 100%;
+              }
+
+              md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]) {
+                color: white;
+              }
+
+              md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active md-icon, md-tabs.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active md-icon, md-tabs.md-default-theme.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused, md-tabs.md-default-theme.md-accent > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused md-icon {
+                color: #69F0AE !important;
+              }
+
+              #alerta {
+                align-self: center;
+                border: 5px;
+                margin: 5px;
+              }
+            }

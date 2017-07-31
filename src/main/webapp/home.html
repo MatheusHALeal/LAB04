@@ -1,0 +1,136 @@
+   <div >
+      <div layout="row" id="menu" >
+         <div flex="2">
+            <div  layout="column" id="coluna" ng-cloak>
+               <section layout="row" flex>
+                  <md-sidenav
+                  class="md-sidenav-left"
+                  md-component-id="left"
+                  md-is-locked-open="$mdMedia('gt-md')"
+                  md-whiteframe="4">
+                  <md-toolbar class="md-theme _md _md-toolbar-transitions">
+                     <h1 class="md-toolbar-tools">Guia de Séries</h1>
+
+                  </md-toolbar>
+                  <md-content layout-padding ng-controller="LeftCtrl">
+                     <div class="input-group">
+                        <input type="text" class="form-control" ng-model="serie" placeholder="Pesquisar séries">
+                        <span class="input-group-addon">
+                           <button id="formulario" class="fa fa-search" ng-click="pesquisarSeries(serie)" ></button>
+                        </span>
+                     </div>
+                  </md-content>
+                  <md-button class="md-raised md-warn" ng-click="logout()">Sair</md-button>
+               </md-sidenav>
+            </section>
+         </div >
+      </div>
+
+      <div ng-cloak id="body">
+         <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+               <md-content>
+                  <md-tab label="home" >
+                     <div ng-show="nadaEncontrado" id="alerta" class="alert alert-danger" role="alert">
+                        <strong>Droga!</strong> Sua busca não encontrou resultados.
+                     </div>
+                     <div flex-xs flex-gt-xs="45"  class="col-sm-3 col-md-6 col-lg-4" ng-repeat="serie in exibicao">
+                        <md-card  id="box">
+                           <md-card-header>
+                              <md-card-avatar>
+                                 <md-icon class="md-avatar-icon" md-svg-icon="img/icons/menu.svg" ng-click="verInfo($event, serie)"></md-icon>
+                              </md-card-avatar>
+                              <md-card-header-text>
+                                 <span class="md-title" ng-click="verInfo($event, serie)">{{serie.Title}}</span>
+                              </md-card-header-text>
+                           </md-card-header>
+                           <img ng-src="{{serie.Poster}}" class="md-card-image" ng-click="verInfo($event, serie)" >
+                           <md-card-actions layout="row" layout-align="start center">
+                              <div>
+                                 <md-button  id="myBtn" class="md-raised" ng-click="adicionarWatchlist(serie)">Watchlist</md-button>
+                                 <md-button  id="myBtn" class="md-raised" ng-click="adicionarMinhasSeries(serie)">Minhas séries</md-button>
+                              </md-card-actions>
+                           </md-card-actions>
+                        </div>
+                        <md-card-content>
+                        </md-card-content>
+                     </md-card>
+                  </div>
+                  <p id="breakline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices.</p>
+               </md-tab>
+            </md-content>
+
+            <md-content>
+
+               <md-tab label="perfil" >
+                  <div flex-xs flex-gt-xs="45"  class="col-sm-3 col-md-6 col-lg-4" ng-repeat="serie in minhasSeries">
+                     <md-card  id="box">
+                        <md-card-header>
+                           <md-card-avatar>
+                              <md-icon class="md-avatar-icon" md-svg-icon="img/icons/menu.svg" ng-click="verInfo($event, serie)"></md-icon>
+                           </md-card-avatar>
+                           <md-card-header-text>
+                              <span class="md-title" ng-click="verInfo($event, serie)">{{serie.Title}}</span>
+                           </md-card-header-text>
+                        </md-card-header>
+                        <img ng-src="{{serie.Poster}}" class="md-card-image" ng-click="verInfo($event, serie)" >
+                        <md-card-actions layout="row" layout-align="start center">
+                           <md-button id="myBtn2"  class="waves-effect waves-light btn" ng-click="removeMinhaSerie(serie)" >Remover</md-button>
+                        </md-card-actions>
+                        <md-card-content>
+                           <div>
+                              <p>Sua Nota:</p>
+                              <md-input-container style="">
+                                 <label id="label">Nota</label>
+                                 <md-select ng-model="size">
+                                    <md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>
+                                 </md-select>
+                              </md-input-container>
+                           </div>
+                           <div>
+                              <label>Último Episódio Visto: <input type="text" ng-model="episodio"></label><br>
+                              <span ng-bind="episodio"></span>
+                           </div>
+                        </md-card-content>
+                     </md-card>
+                  </div>
+                  <p id="breakline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices.</p>
+               </md-tab>
+            </md-content>
+
+            <md-content>
+               <md-tab label="watchlist">
+                  <div flex-xs flex-gt-xs="45"  class="col-sm-3 col-md-6 col-lg-4" ng-repeat="serie in watchlist">
+                     <md-card  id="box">
+                        <md-card-header>
+                           <md-card-avatar>
+                              <md-icon class="md-avatar-icon" md-svg-icon="img/icons/menu.svg" ng-click="verInfo($event, serie)"></md-icon>
+                           </md-card-avatar>
+                           <md-card-header-text>
+                              <span class="md-title" ng-click="verInfo($event, serie)">{{serie.Title}}</span>
+                           </md-card-header-text>
+                        </md-card-header>
+                        <img ng-src="{{serie.Poster}}" class="md-card-image" ng-click="verInfo($event, serie)" >
+                        <md-card-actions layout="row" layout-align="start center">
+                           <md-button id="myBtn" class="md-raised"  ng-click="adicionarMinhasSeries(serie)">Minhas séries</md-button>
+                        </md-card-actions>
+                     </md-card>
+                  </div>
+                  <p id="breakline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices.</p>
+               </md-tab>
+            </md-content>
+
+         </md-tabs>
+      </md-content>
+   </div>
+</div>
+<link rel="stylesheet" type="text/css" href="lib/angular/angular-material.min.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+</div>
+

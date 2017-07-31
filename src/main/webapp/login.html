@@ -1,0 +1,57 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/login.css">
+<section clas="main-container">
+  <div class="container">
+    <div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="header-content text-center">
+        <h1 class="header-title">Guia de Séries</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <div class="form-block">
+        <h2>Registre-se</h2>
+        <div class="form">
+          <form >
+            <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Escolha um Username"   ng-model="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Escolha uma Senha" ng-model="password" name="password" required>
+            </div>
+            <button type="submit" ng-click="register(email, password, name)" class="btn btn-success">Registrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="form-block">
+       <h2>Login</h2>
+       <div class="form">
+        <form >
+            <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="cemail" name="cemail" required>
+            </div>
+          <div class="form-group">
+            <input type="password" class="form-control" ng-model="cpassword" placeholder="Senha" name="cpassword" required>
+          </div>
+          <button type="submit"  ng-click="login(cemail, cpassword)" class="btn btn-success">Entrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>

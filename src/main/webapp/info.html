@@ -1,0 +1,32 @@
+<md-dialog aria-label="">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{serie.Title}}</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <img  style="float: left; margin: 5px" src="{{serie.Poster}}">
+        <p>
+          <h3>Sinopse</h3>{{serie.Plot}}
+        </p>
+        <br><p>
+        <h3>Classificação etária</h3>{{serie.Rated}}
+      </p>
+      <br><p>
+      <h3>Média do IMDB</h3>{{serie.imdbRating}}
+    </p>
+  </div>
+</md-dialog-content>
+
+<md-dialog-actions layout="row">
+  <span flex></span>
+  <md-button ng-click="answer('useful')">
+    Fechar
+  </md-button>
+</md-dialog-actions>
+</form>
+</md-dialog>
