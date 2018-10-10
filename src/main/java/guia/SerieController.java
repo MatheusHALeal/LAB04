@@ -42,7 +42,6 @@ public class SerieController {
 		for (Serie serie2 : series) {
 			if (serie2.getImdbID().equals(imdbID)) {
 				serieRepository.delete(serie2);	
-				System.out.println("aqui");
 			} else {
 
 				throw new RuntimeException();
@@ -97,13 +96,13 @@ public class SerieController {
 	@RequestMapping(value = "/getSeries/{idUsuario}", method = RequestMethod.GET)
 	public List<Serie> getSeries(@PathVariable Long idUsuario) {
 		List<Serie> profile =  serieRepository.findByidUser(idUsuario);
-		List<Serie> exibicao = new ArrayList<>();
+		List<Serie> ArrayDeExibicao = new ArrayList<>();
 		for (Serie serie : profile) {
 			if (!serie.isInWatchlist()) {
-				exibicao.add(serie);
+				ArrayDeExibicao.add(serie);
 			}
 		}
-		return exibicao;
+		return ArrayDeExibicao;
 	} 
 	
 }
